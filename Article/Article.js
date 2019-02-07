@@ -3,7 +3,7 @@
 class Article {
   constructor(domElement) {
     // assign this.domElement to the passed in domElement
-    this.domElement = domElement;
+    this.domElement = domElement.querySelector('.articles');
     console.log(this.domElement);
     // create a reference to the ".expandButton" class. 
     this.expandButton = domElement.querySelector('.expandButton');
@@ -17,8 +17,8 @@ class Article {
   expandArticle() {
     // Using our reference to the domElement, toggle a class to expand or hide the article.
     this.domElement.classList.toggle('article-open');
-    this.expandButton.classList.toggle('expandButton');
-    this.domElement.classList.toggle('toggle-on');
+     this.expandButton.classList.toggle('expandButton');
+     this.domElement.classList.toggle('toggle-on');
     console.log(this.domElement);
   }
 }
@@ -32,5 +32,10 @@ class Article {
 
 let articles = document.querySelectorAll('.article');
 
-articles.forEach(article => new Articles(article));
+articles.forEach(function(article) {
+  console.log(article);
+})
+
+//articles.forEach(article => new Article(article));
  // console.log(article); shows nodelist //
+ //arrow function isn't working//
